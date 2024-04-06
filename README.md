@@ -1,5 +1,3 @@
-
-```
 # Sentiment Analysis Flask App
 
 This is a Flask web application that performs sentiment analysis on financial news articles. The app uses a pre-trained Convolutional Neural Network (CNN) model to classify the sentiment of the input text as either positive or negative.
