@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Sentiment Analysis</title>
+   <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+     crossorigin="anonymous"
+   />
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+   />
+ </head>
+ <body>
+   <div class="container mt-5">
+     <div class="row justify-content-center">
+       <div class="col-md-6">
+        <span class="badge badge-info">Info</span> <h5>News from: <a target="_blank" href="https://www.chinadaily.com.cn/"> Chinal Daily</a></h5>
+        <div class="card">
+           <div class="card-header bg-primary text-white">
+             <i class="fas fa-comment-dots"></i> Sentiment Analysis
+           </div>
+           <div class="card-body">
+             <form action="{{ url_for('analyze') }}" method="POST">
+               <div class="form-group">
+                 <textarea
+                   class="form-control"
+                   name="input_text"
+                   rows="4"
+                   placeholder="Enter url  here..."
+                   required="True"
+                 ></textarea>
+               </div>
+               
+               <div class=" row">
+                <div class="col col-md-6">
+                  <button
+                 type="submit"
+                 class="btn btn-primary"
+                 data-toggle="tooltip"
+                 data-placement="top"
+                 title="Analyze Sentiment"
+               >
+                 <i class="fas fa-robot"></i> Analyze
+               </button>
+  
+                </div>
+                <div class="col col-md-6">
+                  <a
+                  class="btn btn-success"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Check Previous Sentiment analyzed results"
+                  href="result"
+     
+                >
+                  <i class="fa fa-search"></i> Check Previous Analysis
+                </a>
+                </div>
+               </div>
+             </form>
+
+           
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <script
+     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+     crossorigin="anonymous"
+   ></script>
+   <script
+     src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+     crossorigin="anonymous"
+   ></script>
+   <script
+     src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+     crossorigin="anonymous"
+   ></script>
+   <script>
+     $(function () {
+       $('[data-toggle="tooltip"]').tooltip();
+     });
+   </script>
+ </body>
+</html>
